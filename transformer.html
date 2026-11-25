@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>트랜스포머(Transformer)와 "Attention Is All You Need" 완벽 해설 | 강연과 보충자료</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a href="#top" class="skip-link">본문으로 바로가기</a>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-avatar" aria-hidden="true">⚙️</div>
+      <div class="header-title-wrap">
+        <h1><a href="./index.html">트랜스포머(Transformer) 완벽 해설 · 보충자료</a></h1>
+        <p class="header-sub">현대 생성형 AI 심장의 원리를 쉬운 예제로 이해하기</p>
+      </div>
+    </div>
+    <nav class="header-controls" aria-label="주요 페이지 이동">
+      <a href="./index.html" class="nav-pill" data-page="index.html">🏠 요약 카드</a>
+      <a href="./script-1.html" class="nav-pill" data-page="script-1.html">📖 전체 이야기</a>
+      <a href="./people.html" class="nav-pill" data-page="people.html">👤 인물 도감</a>
+      <a href="./transformer.html" class="nav-pill" data-page="transformer.html">⚙️ 트랜스포머 원리</a>
+      <button type="button" class="theme-btn" id="themeToggle" aria-label="화면 테마 전환">🌙 어두운 화면</button>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <a href="./script-1.html#sec-2" class="back-link">← 전체 이야기로 돌아가기</a>
+
+    <div class="hero">
+      <div class="hero-kicker">핵심 기술 원리 해설</div>
+      <h1>트랜스포머(Transformer)란 무엇이고, 왜 논문 제목이 "Attention Is All You Need"일까요?</h1>
+      <p>오늘날 챗GPT(GPT의 마지막 T가 바로 Transformer입니다), 클로드, 제미나이를 탄생시킨 기적의 설계도를 4가지 쉬운 예제와 논리적인 흐름으로 완전히 풀어 드립니다.</p>
+    </div>
+
+    <!-- 1단계: 기존 AI의 문제점 -->
+    <section class="lesson-block">
+      <span class="step-label">1단계 · 트랜스포머 이전의 세상</span>
+      <h2>옛날 AI는 왜 문장이 길어지면 앞 내용을 까먹고 느렸을까요?</h2>
+      <p>2017년 트랜스포머가 나오기 전까지, 인공지능이 글자를 읽는 방식은 <strong>순환신경망(RNN)</strong>이라는 기술이었습니다. 이 방식은 사람이 <strong>아주 좁은 빨대 구멍을 통해 책을 한 글자씩 차례대로 읽는 것</strong>과 똑같았습니다.</p>
+
+      <div class="example-box bad">
+        <span class="ex-title">❌ 옛날 AI(순차 처리)가 겪은 두 가지 치명적 문제</span>
+        <p><strong>문제 ① 앞 내용을 까먹는 건망증:</strong> 예를 들어 이런 긴 문장이 있다고 해 봅시다.<br>
+        <em>"제주도 한림읍에서 12년째 키우고 있는 우리 집 삽살개 바다는 오늘 아침에도 마당에서..."</em> (중간에 50단어 생략) <em>"...결국 <strong>그 녀석</strong>은 개복숭아 나무 아래서 낮잠이 들었다."</em><br>
+        옛날 AI는 앞 단어부터 차례대로 하나씩 기억을 넘겨주며 읽었기 때문에, 50단어쯤 지나면 맨 앞에 나왔던 <strong>'삽살개 바다'</strong>라는 기억이 희미해져서 '그 녀석'이 누구를 가리키는지 잊어버렸습니다.</p>
+        <p><strong>문제 ② 줄 서서 기다려야 하는 느린 공부 속도:</strong> 1번 단어를 계산해야 2번 단어를 읽을 수 있고, 2번을 끝내야 3번을 읽을 수 있었습니다. 아무리 비싼 슈퍼컴퓨터를 1,000대 사다 놓아도 <strong>한 줄로 줄 서서 차례대로 읽어야 하니</strong> 여러 컴퓨터가 동시에 일을 나누어 할 수 없었습니다.</p>
+      </div>
+    </section>
+
+    <!-- 2단계: 트랜스포머의 해결책 -->
+    <section class="lesson-block">
+      <span class="step-label">2단계 · 트랜스포머의 발명</span>
+      <h2>트랜스포머는 문장을 '한눈에 통째로' 펼쳐 놓고 연결선을 긋습니다</h2>
+      <p>2017년 구글 연구진은 빨대 구멍으로 한 글자씩 읽던 옛날 방식을 버리고, <strong>문장 전체를 도화지 한 장에 통째로 펼쳐 놓고 모든 단어가 서로를 동시에 바라보게 만드는 새로운 구조</strong>를 발명했습니다. 이것이 바로 <strong>트랜스포머(Transformer)</strong>입니다.</p>
+
+      <div class="attention-demo">
+        <strong>🔍 실제 문장으로 보는 '어텐션(Attention, 집중)'의 작동 원리</strong>
+        <p class="attention-note">아래 문장에서 AI가 <strong>"그것(it)"</strong>이라는 단어를 이해할 때, 문장 속 모든 단어와 동시에 연결선을 그어 점수를 매깁니다.</p>
+        <div class="sentence-tokens">
+          <span class="token strong-match">강아지가 (점수 92점!)</span>
+          <span class="token">길을</span>
+          <span class="token">건너지</span>
+          <span class="token">않았다.</span>
+          <span class="token">왜냐하면</span>
+          <span class="token target">그것은</span>
+          <span class="token">너무</span>
+          <span class="token strong-match">피곤했기 (점수 88점!)</span>
+          <span class="token">때문이다.</span>
+        </div>
+        <p class="attention-note">만약 문장 끝이 <em>"...너무 <strong>좁았기</strong> 때문이다"</em>로 바뀌면, 트랜스포머는 순식간에 '그것'의 집중 점수를 <strong>'길(95점)'</strong>로 옮겨 연결합니다!</p>
+      </div>
+
+      <div class="example-box good">
+        <span class="ex-title">✅ 트랜스포머가 바꾼 두 가지 기적</span>
+        <p><strong>기적 ① 거리가 아무리 멀어도 100% 기억함:</strong> 책의 1페이지에 나온 주인공 이름과 300페이지에 나온 대명사 사이에 직접 화살표를 연결할 수 있으므로, 긴 글의 앞뒤 문맥을 절대 놓치지 않습니다.</p>
+        <p><strong>기적 ② 수만 대의 컴퓨터가 동시에 공부함(병렬 처리):</strong> 한 글자씩 줄 서서 기다릴 필요 없이, 책 수만 권을 펼쳐 놓고 수만 대의 그래픽카드(GPU)가 동시에 단어 간 관계 점수를 계산할 수 있게 되었습니다. 오늘날 AI가 인류의 모든 백과사전과 인터넷 글을 몇 달 만에 다 읽고 학습할 수 있게 된 결정적 비결이 바로 이 구조 덕분입니다.</p>
+      </div>
+    </section>
+
+    <!-- 3단계: 논문 제목의 논리적 비밀 -->
+    <section class="lesson-block">
+      <span class="step-label">3단계 · 논문 제목의 진짜 뜻 해부</span>
+      <h2>왜 논문 제목이 "Attention Is All You Need"가 되었을까요?</h2>
+      <p>일반인이 영어 제목 <strong>"Attention Is All You Need"</strong>를 직역해서 읽으면 <em>"주의 집중이 당신이 필요한 전부예요"</em>처럼 들려서 도대체 무슨 소리인지 알기 어렵습니다. 이 제목은 2017년 당시 인공지능 학계의 상식을 뒤엎은 <strong>아주 도발적이고 논리적인 선언</strong>이었습니다.</p>
+
+      <div class="title-breakdown">
+        <div class="tb-card">
+          <span class="tb-word">1. Attention<br>(어텐션)</span>
+          <p>일상어의 '주의 집중'이 아니라, AI 공학에서 <strong>"문장 속 단어들이 서로 얼마나 관련이 있는지 연결 점수를 계산하는 기술(어텐션 메커니즘)"</strong>을 가리키는 전문 용어입니다.</p>
+        </div>
+        <div class="tb-card">
+          <span class="tb-word">2. Is All You Need<br>(그것 하나면 충분하다)</span>
+          <p>2017년 전까지는 "어텐션 기술"을 보조 양념으로만 쓰고, 뼈대는 반드시 옛날 방식(순환신경망 RNN이나 합성곱 CNN)을 써야 한다고 모두가 믿었습니다. 구글 연구진은 <strong>"무겁고 느린 옛날 뼈대는 다 버리고, 오직 어텐션 기술 하나만 있어도 충분하다!"</strong>고 선언한 것입니다.</p>
+        </div>
+        <div class="tb-card">
+          <span class="tb-word">3. 오마주<br>(비틀즈 노래 패러디)</span>
+          <p>비틀즈의 명곡 <em>"All You Need Is Love(사랑만 있으면 돼)"</em>의 문장 구조를 재치 있게 패러디하여, 공학 논문 제목을 전 세계 사람들이 한 번에 기억하도록 지은 것입니다.</p>
+        </div>
+      </div>
+
+      <div class="example-box neutral">
+        <span class="ex-title">🎯 우리말로 가장 정확하게 의역한 논문 제목의 의미</span>
+        <p><strong>"느려터진 기존 순서대로 읽기 방식(RNN)은 전부 버리십시오. 문장 전체를 한눈에 훑으며 단어끼리 관계 점수를 매기는 '어텐션(Attention)' 장치, 오직 그것 하나만으로 AI를 만드는 데 충분합니다!"</strong></p>
+      </div>
+    </section>
+
+    <!-- 4단계: 왜 이름이 Transformer인가? -->
+    <section class="lesson-block">
+      <span class="step-label">4단계 · 보너스 상식</span>
+      <h2>그런데 왜 기술 이름은 '어텐션'이 아니라 '트랜스포머'일까요?</h2>
+      <p>이 구조가 하는 일을 가장 잘 보여 주는 이름이 바로 <strong>트랜스포머(Transformer, 변환기)</strong>이기 때문입니다.</p>
+      <p>예를 들어 영어 문장 <em>"I love Jeju Island"</em>를 입력받으면, 여러 층의 어텐션 장치를 통과시키면서 단어들의 관계와 문맥 의미를 분석한 뒤, 한국어 문장 <em>"나는 제주도를 사랑합니다"</em>라는 새로운 형태로 <strong>변환(Transform)</strong>해 내놓는 기계라는 뜻에서 연구진(<a href="./people.html#vaswani" class="wiki-link">아시시 바스와니</a> 등)이 <strong>Transformer</strong>라는 이름을 붙였습니다.</p>
+      <p>그리고 1년 뒤인 2018년, OpenAI가 이 트랜스포머 구조를 가져다가 "미리 학습시켜서(Pre-trained) 글을 생성하는(Generative) 변환기(Transformer)"를 만들면서 <strong>GPT (Generative Pre-trained Transformer)</strong>라는 이름을 붙이게 된 것입니다.</p>
+      <p><a href="./script-1.html#sec-2" class="back-link" style="margin-top: 16px; margin-bottom: 0;">← 이제 이 원리를 기억하며 전체 이야기로 돌아가기</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>트랜스포머(Transformer)와 "Attention Is All You Need" 완벽 해설 · 강연과 보충자료</p>
+  </footer>
+</body>
+</html>
