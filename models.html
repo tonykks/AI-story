@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4대 진영 AI 모델 계보와 장단점 비교 | AI화 시대의 탄생 비밀</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a href="#top" class="skip-link">본문으로 바로가기</a>
+
+  <header class="site-header">
+    <div class="header-brand">
+      <div class="header-avatar" aria-hidden="true">🤖</div>
+      <div class="header-title-wrap">
+        <h1><a href="./index.html">4대 진영 AI 모델 계보 · 심층 비교</a></h1>
+        <p class="header-sub">개발 컨셉 · 추월 경쟁 · 장단점 · 현재 머무는 자리</p>
+      </div>
+    </div>
+    <nav class="header-controls" aria-label="주요 페이지 이동">
+      <a href="./index.html" class="nav-pill" data-page="index.html">🏠 요약 카드</a>
+      <a href="./script-1.html" class="nav-pill" data-page="script-1.html">📖 전체 이야기</a>
+      <a href="./models.html" class="nav-pill" data-page="models.html">🤖 모델 계보</a>
+      <a href="./people.html" class="nav-pill" data-page="people.html">👤 인물 도감</a>
+      <a href="./transformer.html" class="nav-pill" data-page="transformer.html">⚙️ 트랜스포머 원리</a>
+      <button type="button" class="theme-btn" id="themeToggle" aria-label="화면 테마 전환">🌙 어두운 화면</button>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <a href="./script-1.html#sec-4" class="back-link">← 전체 이야기 4절(동시다발적 경쟁)로 돌아가기</a>
+
+    <div class="hero">
+      <div class="hero-kicker">모델 계보 허브 · 2018년 ~ 2026년 현재</div>
+      <h1>4대 AI 진영의 모델 진화 계보와 장단점 종합 비교</h1>
+      <p>구글의 <a href="./transformer.html" class="wiki-link">트랜스포머(Transformer)</a> 발명에서 갈라져 나온 <strong>OpenAI · Anthropic · Google · 중국 오픈소스 진영</strong>이 어떤 개발 철학(컨셉)으로 모델을 키워 왔는지, 누가 누구를 추월하며 오늘날 각자 어떤 자리에 정착했는지를 정리했습니다. 각 진영 카드를 눌러 모델 계보 상세 페이지로 들어가 보세요.</p>
+    </div>
+
+    <div class="toc-pills">
+      <a href="./models/gpt.html">OpenAI · GPT &amp; o시리즈 계보</a>
+      <a href="./models/claude.html">Anthropic · Claude 계보</a>
+      <a href="./models/gemini.html">Google · Gemini 계보</a>
+      <a href="./models/deepseek.html">중국 진영 · DeepSeek·Qwen 계보</a>
+      <a href="#camp-matrix">4대 진영 장단점 종합 비교표</a>
+    </div>
+
+    <section class="models-hub-grid" aria-label="4대 진영 모델 계보">
+      <article class="model-hub-card">
+        <span class="p-badge">OpenAI · 범용 지능 선점과 대중화</span>
+        <h2><a href="./models/gpt.html">OpenAI GPT &amp; 추론 모델 계보</a></h2>
+        <p class="p-sub">개발 컨셉: 대규모 스케일링과 대중 플랫폼 선점</p>
+        <p class="model-hub-desc"><a href="./people/altman.html" class="wiki-link">샘 알트만</a>과 <a href="./people/sutskever.html" class="wiki-link">일리야 수츠케버</a>가 이끈 OpenAI는 트랜스포머를 가장 먼저 상용화해 ChatGPT(GPT-3.5)로 대중을 깨웠고, o1/o3 추론 모델과 GPT-5·6 자율 에이전트까지 '가장 먼저 새 시장을 여는 개척자' 역할을 해 왔습니다.</p>
+        <div class="model-chain-pills">
+          <span class="chain-chip">GPT-1~3</span>
+          <span class="chain-chip">ChatGPT (3.5)</span>
+          <span class="chain-chip">GPT-4 / 4o</span>
+          <span class="chain-chip">o1 / o3</span>
+          <span class="chain-chip">GPT-5·6</span>
+        </div>
+        <a href="./models/gpt.html" class="hub-more">GPT 계보 및 장단점 상세 보기 →</a>
+      </article>
+
+      <article class="model-hub-card">
+        <span class="p-badge">Anthropic · 안전 정렬과 실무 코딩 표준</span>
+        <h2><a href="./models/claude.html">Anthropic Claude 계보</a></h2>
+        <p class="p-sub">개발 컨셉: 헌법적 AI 안전성과 압도적 실무 정확도</p>
+        <p class="model-hub-desc"><a href="./people/amodei.html" class="wiki-link">아모데이 남매</a>가 안전 원칙을 지키기 위해 분가해 세운 Anthropic은 Claude 1·2(100K 장문)로 기틀을 다진 뒤, Claude 3 Opus와 3.5 Sonnet으로 GPT-4를 추월하며 개발자·기업 실무와 코딩 에이전트(Claude Code, Opus/Sonnet 5.5)의 표준으로 자리 잡았습니다.</p>
+        <div class="model-chain-pills">
+          <span class="chain-chip">Claude 1·2</span>
+          <span class="chain-chip">Claude 3 Opus</span>
+          <span class="chain-chip">3.5 Sonnet</span>
+          <span class="chain-chip">3.7·4 하이브리드</span>
+          <span class="chain-chip">Claude Code · 5.5</span>
+        </div>
+        <a href="./models/claude.html" class="hub-more">Claude 계보 및 장단점 상세 보기 →</a>
+      </article>
+
+      <article class="model-hub-card">
+        <span class="p-badge">Google DeepMind · 원천 기술과 초장문 멀티모달</span>
+        <h2><a href="./models/gemini.html">Google Gemini 계보</a></h2>
+        <p class="p-sub">개발 컨셉: 딥마인드·브레인 통합과 네이티브 멀티모달·초장문</p>
+        <p class="model-hub-desc"><a href="./people/vaswani.html" class="wiki-link">트랜스포머</a>를 발명하고도 Bard 초기 시연 오류로 고전했던 구글은 <a href="./people/hassabis.html" class="wiki-link">데미스 허사비스</a> 중심의 통합 이후 Gemini 1.5 Pro(200만 토큰), Gemini 2.5 Thinking, Gemini 3·4 시리즈로 거대한 인프라와 영상·음성·텍스트 통합 능력에서 대반격에 성공했습니다.</p>
+        <div class="model-chain-pills">
+          <span class="chain-chip">Bard (PaLM 2)</span>
+          <span class="chain-chip">Gemini 1.0</span>
+          <span class="chain-chip">1.5 Pro (2M)</span>
+          <span class="chain-chip">2.0/2.5 Thinking</span>
+          <span class="chain-chip">Gemini 3·4</span>
+        </div>
+        <a href="./models/gemini.html" class="hub-more">Gemini 계보 및 장단점 상세 보기 →</a>
+      </article>
+
+      <article class="model-hub-card">
+        <span class="p-badge">중국 AI 진영 · 알고리즘 효율화와 무료 개방</span>
+        <h2><a href="./models/deepseek.html">중국 AI 진영 (DeepSeek · Qwen) 계보</a></h2>
+        <p class="p-sub">개발 컨셉: 반도체 통제를 뚫는 MoE 극한 효율과 오픈 웨이트</p>
+        <p class="model-hub-desc"><a href="./people/liang.html" class="wiki-link">량원펑</a>의 DeepSeek를 비롯한 중국 진영은 1단계 지식 증류(DeepSeek-R1 쇼크)로 미국을 따라잡은 뒤, 2단계에서는 MoE 초고효율 아키텍처·독자 강화학습·무료 오픈 웨이트(DeepSeek-V4, Qwen 3.8, Kimi, GLM)로 글로벌 개발자 생태계를 넓히고 있습니다.</p>
+        <div class="model-chain-pills">
+          <span class="chain-chip">1단계 지식 증류</span>
+          <span class="chain-chip">DeepSeek-R1</span>
+          <span class="chain-chip">MoE 초고효율</span>
+          <span class="chain-chip">DeepSeek-V4</span>
+          <span class="chain-chip">Qwen 3.8 · Kimi</span>
+        </div>
+        <a href="./models/deepseek.html" class="hub-more">중국 AI 계보 및 장단점 상세 보기 →</a>
+      </article>
+    </section>
+
+    <section id="camp-matrix" class="story-section" style="margin-bottom: 0;">
+      <div class="sec-num">
+        <span>한눈에 보는 4대 진영 장단점 종합 비교</span>
+        <a href="./script-1.html#camp-pros-cons-table" class="scene-jump">스크립트 본문에서도 보기 ↗</a>
+      </div>
+      <h2>각 진영의 개발 컨셉, 결정적 강점, 한계, 추천 활용 분야</h2>
+      <div class="table-wrap">
+        <table class="model-compare-table">
+          <thead>
+            <tr>
+              <th>진영 및 대표 모델</th>
+              <th>핵심 개발 컨셉</th>
+              <th>결정적 강점</th>
+              <th>뚜렷한 약점(한계)</th>
+              <th>추천 활용 분야</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><a href="./models/gpt.html">OpenAI</a></strong><br>(GPT-4o · o1/o3 · GPT-5/6)</td>
+              <td>대규모 스케일링과 범용 대중 플랫폼 선점</td>
+              <td>가장 빠른 신패러다임(ChatGPT·음성·추론) 개척, 방대한 플러그인·대중 생태계, 높은 범용성</td>
+              <td>잦은 모델 파편화, 영리화 과정에서의 내부 안전파 이탈·거버넌스 논란</td>
+              <td>일상·기획 범용 어시스턴트, 실시간 음성 대화, 복합 에이전트 실험</td>
+            </tr>
+            <tr>
+              <td><strong><a href="./models/claude.html">Anthropic</a></strong><br>(Claude 3.5 · 3.7 · Claude Code · 5.5)</td>
+              <td>헌법적 AI 안전 정렬과 실무·코딩 신뢰성 극대화</td>
+              <td>최상위 코딩·아키텍처 이해력, 자연스러운 문체, <a href="./people/karpathy.html" class="wiki-link">카파시</a> 합류로 가속된 사전학습·터미널 에이전트 표준</td>
+              <td>비교적 보수적인 안전 거절 정책(일부 맥락), 상대적으로 높은 API 단가와 토큰 제한</td>
+              <td>소프트웨어 개발·리팩토링(<a href="./script-1.html#sec-6" class="wiki-link">Cursor</a>/Claude Code), 정교한 문서·리서치</td>
+            </tr>
+            <tr>
+              <td><strong><a href="./models/gemini.html">Google</a></strong><br>(Gemini 1.5 · 2.5 · Gemini 3/4)</td>
+              <td>네이티브 멀티모달과 초장문 맥락, 자사 인프라 수직 통합</td>
+              <td>100만~200만 토큰 초장문 처리, 영상·음성 네이티브 이해, 검색·Workspace·TPU 클라우드 결합</td>
+              <td>초기 Bard 시연 실수로 인한 브랜드 출발 지연, 대화 톤·일관성 기복 이슈</td>
+              <td>긴 영상·오디오 분석, 수만 페이지 자료 통째 요약, 구글 생태계·클라우드 연동</td>
+            </tr>
+            <tr>
+              <td><strong><a href="./models/deepseek.html">중국 오픈소스 진영</a></strong><br>(DeepSeek-R1/V4 · Qwen 3.8 · Kimi · GLM)</td>
+              <td>반도체 규제를 넘는 MoE 극한 효율화와 오픈 웨이트 개방</td>
+              <td>압도적 가성비, 모델 가중치 무료 공개로 로컬·사내 서버 구축 가능, 빠른 추론 속도</td>
+              <td>데이터 검열·프라이버시·지정학적 규제 우려, 초기 지식 증류 의존 논란의 잔상</td>
+              <td>로컬·온프레미스 보안 AI, 대량 자동화 비용 절감, 오픈소스 커스터마이징</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scroll-hint">← 모바일 화면에서는 표를 좌우로 밀어서 전체를 비교해 보세요 →</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>4대 진영 AI 모델 계보와 장단점 비교 · 강연과 보충자료 | 한 지붕에서 세 집으로, 그리고 응용 생태계와 미래까지</p>
+  </footer>
+</body>
+</html>

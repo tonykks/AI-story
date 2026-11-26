@@ -56,9 +56,13 @@
    * 현재 URL 경로에 해당하는 상단 내비게이션 버튼에 active 클래스를 부여합니다.
    */
   function highlightActiveNav() {
-    const path = window.location.pathname || "";
-    const fileName = path.split("/").pop() || "index.html";
-    const normalized = fileName === "" ? "index.html" : fileName;
+    const rawPath = (window.location.pathname || "").replace(/\\/g, "/");
+    let normalized = rawPath.split("/").pop() || "index.html";
+    if (rawPath.includes("/people/")) {
+      normalized = "people.html";
+    } else if (rawPath.includes("/models/")) {
+      normalized = "models.html";
+    }
 
     const navLinks = document.querySelectorAll(".header-controls .nav-pill[data-page]");
     navLinks.forEach((link) => {

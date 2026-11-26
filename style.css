@@ -1191,6 +1191,315 @@ th {
   font-weight: 700;
 }
 
+.people-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.person-hub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.person-hub-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.person-hub-card h2 {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.person-hub-card h2 a {
+  color: var(--text);
+}
+
+.person-hub-card h2 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.person-hub-card .p-sub {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.person-hub-desc {
+  margin: 4px 0 0;
+  font-size: 0.91rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.hub-more {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.person-detail-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--border);
+}
+
+/* =========================================
+   models.html & models/*.html : 모델 계보 · 경쟁 드라마 · 장단점 비교
+   ========================================= */
+.models-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.model-hub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.model-hub-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.model-hub-card h2 {
+  margin: 0;
+  font-size: 1.24rem;
+  line-height: 1.35;
+}
+
+.model-hub-card h2 a {
+  color: var(--text);
+}
+
+.model-hub-card h2 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.model-hub-meta {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin: 0;
+}
+
+.model-hub-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.66;
+}
+
+.model-chain-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.chain-chip {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.lineage-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 22px 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+}
+
+.lineage-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.lineage-step .ls-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.lineage-step .ls-ver {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.lineage-step .ls-date {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.lineage-step p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.68;
+}
+
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.pros-box {
+  background: var(--good-bg);
+  border: 1px solid var(--good-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.cons-box {
+  background: var(--bad-bg);
+  border: 1px solid var(--bad-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.pros-box h3,
+.cons-box h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.pros-box ul,
+.cons-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.status-banner {
+  background: var(--quote-bg);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+
+.status-banner strong {
+  display: block;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.battle-acts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.act-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.act-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.act-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+
+.act-card p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.future-battle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0 26px;
+}
+
+.battle-target-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.battle-target-card h4 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.battle-target-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.64;
+  color: var(--text);
+}
+
 /* =========================================
    transformer.html : 트랜스포머 원리 해설
    ========================================= */
@@ -1386,7 +1695,12 @@ th {
   .founders-grid,
   .ecosystem-grid,
   .title-breakdown,
-  .future-grid {
+  .future-grid,
+  .people-hub-grid,
+  .models-hub-grid,
+  .pros-cons-grid,
+  .battle-acts,
+  .future-battle-grid {
     grid-template-columns: 1fr;
   }
 
