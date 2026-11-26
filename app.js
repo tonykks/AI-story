@@ -155,9 +155,32 @@
     }
   }
 
+  /**
+   * data-copy-text 버튼 클릭 시 클립보드로 URL을 복사하고 안내 문구를 표시합니다.
+   */
+  function initCopyButtons() {
+    document.querySelectorAll("[data-copy-text]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-copy-text");
+        if (!text) return;
+        const original = btn.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.textContent = "✓ 복사됨";
+        } catch {
+          btn.textContent = "복사 실패";
+        }
+        window.setTimeout(() => {
+          btn.textContent = original;
+        }, 1600);
+      });
+    });
+  }
+
   window.toggleDrawer = toggleDrawer;
 
   initTheme();
   highlightActiveNav();
   initDrawers();
+  initCopyButtons();
 })();

@@ -117,6 +117,16 @@ a:hover {
   flex-shrink: 0;
 }
 
+.header-avatar-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+.header-avatar-link:hover {
+  text-decoration: none;
+}
+
 .header-title-wrap {
   min-width: 0;
 }
@@ -1581,6 +1591,178 @@ th {
 }
 
 /* =========================================
+   share.html : 한눈에 보는 사이트 소개 & QR 접속 페이지
+   ========================================= */
+.share-wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.share-stage {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.share-intro-kicker {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.share-intro h2 {
+  margin: 0 0 12px;
+  font-size: 1.65rem;
+  line-height: 1.32;
+  font-weight: 900;
+}
+
+.share-intro-lead {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.72;
+}
+
+.share-highlights {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.share-highlights li {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.share-highlights strong {
+  color: var(--accent-dark);
+}
+
+.share-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.share-qr-panel {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.qr-frame {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-img {
+  display: block;
+  width: 210px;
+  height: 210px;
+}
+
+.qr-caption {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.url-stack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.url-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.url-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.url-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.url-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  word-break: break-all;
+}
+
+.url-value.short {
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* =========================================
    transformer.html : 트랜스포머 원리 해설
    ========================================= */
 .lesson-block {
@@ -1781,8 +1963,13 @@ th {
   .pros-cons-grid,
   .battle-acts,
   .future-battle-grid,
-  .course-grid {
+  .course-grid,
+  .share-stage {
     grid-template-columns: 1fr;
+  }
+
+  .share-stage {
+    padding: 22px 18px;
   }
 
   .scene-card,
