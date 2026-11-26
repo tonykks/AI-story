@@ -1501,6 +1501,86 @@ th {
 }
 
 /* =========================================
+   독자 수준별 추천 읽기 코스 카드
+   ========================================= */
+.course-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-top: 22px;
+  box-shadow: var(--shadow);
+}
+
+.guide-hero .course-box {
+  margin-top: 20px;
+}
+
+.course-box-title {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.course-card {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.course-card h4 {
+  margin: 0 0 6px;
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+.course-card p {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.58;
+}
+
+.course-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.course-step-link {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.course-step-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+.course-arrow {
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+/* =========================================
    transformer.html : 트랜스포머 원리 해설
    ========================================= */
 .lesson-block {
@@ -1700,7 +1780,8 @@ th {
   .models-hub-grid,
   .pros-cons-grid,
   .battle-acts,
-  .future-battle-grid {
+  .future-battle-grid,
+  .course-grid {
     grid-template-columns: 1fr;
   }
 

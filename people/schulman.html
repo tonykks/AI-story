@@ -32,27 +32,40 @@
     <a href="../people.html" class="back-link">← 인물 도감 목록으로 돌아가기</a>
 
     <article class="person-card">
-      <span class="p-badge">OpenAI 공동 창업자 · 강화학습 설계자</span>
+      <span class="p-badge">OpenAI 공동 창업자 · 강화학습(RLHF) 설계자</span>
       <h2>존 슐만 (John Schulman)</h2>
       <p class="p-sub">AI가 사람처럼 정중하고 유용하게 대답하도록 가르치는 강화학습(PPO · RLHF)의 대가</p>
       <div class="p-grid">
         <div class="p-row">
           <strong>1. 시대적·학문적 배경</strong>
-          칼텍(Caltech) 물리학과를 졸업하고 UC 버클리에서 로봇공학·강화학습 박사 학위를 받았습니다. AI가 시행착오와 보상 신호를 통해 스스로 최적의 행동을 찾아가는 강화학습(Reinforcement Learning) 분야의 대표적 이론가이자 구현자입니다.
+          칼텍(Caltech) 물리학과를 졸업하고 UC 버클리에서 피터 아빌(Pieter Abbeel) 교수의 지도 아래 로봇공학·강화학습 박사 학위를 받았습니다. AI가 시행착오와 보상 신호를 통해 스스로 최적의 행동을 찾아가는 강화학습(Reinforcement Learning) 분야의 대표적 이론가이자 구현자였습니다.
         </div>
         <div class="p-row">
-          <strong>2. 이합집산 계보: OpenAI 창립에서 Anthropic 이적까지</strong>
-          2015년 <a href="./altman.html" class="wiki-link">샘 알트만</a>·<a href="./musk.html" class="wiki-link">일론 머스크</a>의 부름으로 OpenAI 창립 멤버로 합류해 ChatGPT 탄생을 이끌었습니다. 그러나 이후 AI 안전 정렬 연구에 더 집중하고 싶다는 뜻을 밝히며 2024년 8월 OpenAI를 떠나 <a href="./amodei.html" class="wiki-link">아모데이 남매</a>가 이끄는 경쟁사 <a href="../models/claude.html" class="wiki-link">Anthropic</a>으로 합류한 바 있습니다.
+          <strong>2. 이합집산 계보 — 누구와 손잡고 왜 갈라졌는가</strong>
+          2015년 <a href="./altman.html" class="wiki-link">샘 알트만</a>·<a href="./musk.html" class="wiki-link">일론 머스크</a>의 부름으로 OpenAI 창립 멤버에 합류해 ChatGPT 탄생을 이끌었습니다. 그러나 OpenAI가 상업화 속도를 높이자 "AI 안전 정렬(Alignment) 연구에 더 깊이 집중하고 싶다"며 2024년 8월 OpenAI를 떠나, 먼저 분가해 있던 <a href="./amodei.html" class="wiki-link">아모데이 남매</a>의 <a href="../models/claude.html" class="wiki-link">Anthropic</a>으로 자리를 옮겼습니다.
         </div>
-        <div class="p-row">
-          <strong>3. 결정적 일화와 대표 모델</strong>
-          강화학습의 표준이 된 <strong>'PPO(Proximal Policy Optimization) 알고리즘'</strong>을 발명했습니다. 특히 2022년 문장만 이어 쓰던 GPT-3.5에 인간의 선호도 피드백을 학습시켜 정중하고 논리적으로 대화하는 <strong><a href="../models/gpt.html" class="wiki-link">ChatGPT</a></strong>로 탈바꿈시킨 핵심 기술 <strong>RLHF(인간 피드백 기반 강화학습)</strong>를 주도했습니다.
+      </div>
+
+      <h3>3. 결정적 전환점과 대표 업적 타임라인</h3>
+      <div class="lineage-timeline">
+        <div class="lineage-step">
+          <div class="ls-head"><span class="ls-ver">OpenAI 창립 합류 및 PPO 발명</span><span class="ls-date">2015.12 ~ 2017</span></div>
+          <p>창립 멤버로 합류한 뒤(<a href="../script-1.html#sec-1" class="wiki-link">1절 보기</a>), 오늘날 강화학습의 사실상 표준 알고리즘이 된 <strong>PPO(Proximal Policy Optimization)</strong>를 발표했습니다.</p>
+        </div>
+        <div class="lineage-step">
+          <div class="ls-head"><span class="ls-ver">InstructGPT와 RLHF 정립</span><span class="ls-date">2022.01 ~ 2022.11</span></div>
+          <p>문장만 이어 쓰던 GPT-3에 인간 피드백 기반 강화학습(RLHF)을 입혀 사람과 대화하는 <strong><a href="../models/gpt.html" class="wiki-link">ChatGPT</a></strong>를 탄생시켰습니다(<a href="../script-1.html#sec-3" class="wiki-link">3절 보기</a>).</p>
+        </div>
+        <div class="lineage-step">
+          <div class="ls-head"><span class="ls-ver">안전 정렬 연구를 위한 진영 이동</span><span class="ls-date">2024.08 ~ 현재</span></div>
+          <p>사후 학습·정렬 연구를 심화하기 위해 <a href="../models/claude.html" class="wiki-link">Anthropic</a>으로 이동하며 OpenAI 출신 인재들의 안전 진영 결집에 힘을 보탰습니다.</p>
         </div>
       </div>
 
       <div class="person-detail-nav">
-        <a href="../script-1.html#sec-1" class="return-script">← 1절 '창립 멤버 소개' 돌아가기</a>
-        <a href="../models/gpt.html" class="return-script">🤖 OpenAI GPT 계보 보기 →</a>
+        <a href="../script-1.html#sec-1" class="return-script">← 1절 '창립 멤버'</a>
+        <a href="../models/gpt.html" class="return-script">🤖 OpenAI GPT 계보 →</a>
+        <a href="../models/claude.html" class="return-script">🤖 Anthropic Claude 계보 →</a>
         <a href="./zaremba.html" class="return-script">다음 인물: 보이치에흐 자렘바 →</a>
       </div>
     </article>
